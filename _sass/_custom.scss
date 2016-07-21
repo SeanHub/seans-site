@@ -1,45 +1,25 @@
-$c: #58c;
-$b: rgba(255,255,255,.2);
-$t: rgba(255,255,255,.1);
-$n: transparent;
-
-html, body {
-    height: 100%;
-}
-
-html {
-    background-image: linear-gradient(to bottom, $c 0%, darken($c, 15%) 100%);
-}
-
 body {
-    background-color: transparent;
-    background-image: 
-        linear-gradient(0deg,
-        $n 0%, $n 9px,
-        $b 9px, $b 10px, $n 10px, $n 19px,
-        $t 19px, $t 20px, $n 20px, $n 29px,
-        $t 29px, $t 30px, $n 30px, $n 39px,
-        $t 39px, $t 40px, $n 40px, $n 49px,
-        $t 49px, $t 50px),
-        linear-gradient(-90deg,
-        $n 0%, $n 9px,
-        $b 9px, $b 10px, $n 10px, $n 19px,
-        $t 19px, $t 20px, $n 20px, $n 29px,
-        $t 29px, $t 30px, $n 30px, $n 39px,
-        $t 39px, $t 40px, $n 40px, $n 49px,
-        $t 49px, $t 50px);
-    background-size: 50px 50px;
+    background-color: rgba(50,102,204,1);
+    background-image: linear-gradient(rgba(255,255,255,.2) 2px, transparent 2px),
+        linear-gradient(90deg, rgba(255,255,255,.1) 2px, transparent 2px),
+        linear-gradient(rgba(255,255,255,.3) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.3) 1px, transparent 1px);
+    background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+    background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
 }
 
 .content-box {
+    animation: fadein;
+    animation-duration: 1s;
     background-color: whitesmoke;
     box-shadow: 10px 10px 0 #e8e8e8;
     margin: 40px 0;
+    opacity: 1;
+    overflow: auto;
     padding: 10px 15px;
 }
 
 .avatar {
-    background-color: red;
     float: left;
     height: 150px;
     margin: 0 15px 0 0;
@@ -55,4 +35,13 @@ body {
 .post-title {
     font-size: 30px;
     margin: 0;
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }

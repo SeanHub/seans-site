@@ -4,11 +4,17 @@ layout: default
 
 <div class="home">
   <div class="content-box">
-    <div class="avatar"></div>
+    <div class="avatar">
+      <img src="{{ site.avatar }}">
+    </div>
     <h1>{{ site.title }}</h1>
     <h3>{{ site.description }}</h3>
     {% if site.github_username %}
       <a href="https://github.com/{{ site.github_username }}" target="_blank"><span class="username">GitHub</span></a>
+    {% endif %}
+    &nbsp;
+    {% if site.instagram_username %}
+      <a href="https://www.instagram.com/{{ site.instagram_username }}" target="_blank"><span class="username">Instagram</span></a>
     {% endif %}
     &nbsp;
     {% if site.twitter_username %}
@@ -19,7 +25,7 @@ layout: default
     {% for post in site.posts %}
       <li class="content-box">
         <h1 class="post-title">{{ post.title }}</h1>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <span class="post-meta">{{ post.date | date: "%d %b %Y" }}</span>
         <p>{{ post.content }}</p>
       </li>
     {% endfor %}

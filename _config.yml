@@ -10,8 +10,12 @@ title: Sean McCann
 description: "Software Engineer from Manchester, UK. I build mobile and desktop apps using a variety of technologies including JavaScript, Angular, Node and C#."
 baseurl: ""
 url: "http://seanmccann.name"
-twitter_username: mccannsean
+instagram_username: mccannsean
 github_username:  seanhub
+twitter_username: mccannsean
 
 # Build settings
 markdown: kramdown
+
+# Theme Settings
+avatar: "/assets/avatar.png"
