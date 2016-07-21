@@ -3,21 +3,26 @@ layout: default
 ---
 
 <div class="home">
-
-  <h1 class="page-heading">Posts</h1>
-
+  <div class="content-box">
+    <div class="avatar"></div>
+    <h1>{{ site.title }}</h1>
+    <h3>{{ site.description }}</h3>
+    {% if site.github_username %}
+      <a href="https://github.com/{{ site.github_username }}" target="_blank"><span class="username">GitHub</span></a>
+    {% endif %}
+    &nbsp;
+    {% if site.twitter_username %}
+      <a href="https://twitter.com/{{ site.twitter_username }}" target="_blank"><span class="username">Twitter</span></a>
+    {% endif %}
+  </div>
   <ul class="post-list">
     {% for post in site.posts %}
-      <li>
+      <li class="content-box">
+        <h1 class="post-title">{{ post.title }}</h1>
         <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
+        <p>{{ post.content }}</p>
       </li>
     {% endfor %}
   </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 
 </div>
